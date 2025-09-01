@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubrar seu CEP</title>
+    <link rel="stylesheet" href="espelho.css">
+</head>
+<body>
+
+    <header>
+        <audio controls autoplay loop controls autoplay loop style="position: fixed; bottom: 10px; right: 10px; width: 250px; /* opcional: largura do player */ z-index: 1000;">
+            <source src="mu/my_home.mp3" type="audio/mpeg">
+        </audio>
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+                <h2>Consulta de CEP</h2>
+                <input type="text" id="cep" placeholder="Digite seu CEP" required>
+                <input type="text" id="numeroCasa" placeholder="Digite o numero da casa" required>
+                <button onclick="buscarCEP()">Buscar</button>
+
+                <div id="resultado"></div>
+                <img src="abeia.gif" alt="Abelharrrras" style="width: 320; height: 420;">
+            </div>
+        </section>
+    </main>
+
+    <script src="esquipite.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+
+
+/* ===== Resetzinho básico ===== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  background: repeating-linear-gradient(
+      to bottom,
+      #b8cfe7 0 3px,
+      #a9c3df 3px 6px
+  );
+  color: #111;
+}
+
+/* ===== Topo tipo banner azul escuro ===== */
+header {
+  height: 92px;
+  border-bottom: 1px solid #0d2a55;
+  background:
+    radial-gradient(1200px 180px at 70% 20%, #254f96 0%, #173a6f 55%, #122c57 100%);
+  box-shadow: 0 1px 0 #2b5cab inset, 0 -1px 0 #0d2a55 inset, 0 2px 6px rgba(0,0,0,.3);
+  position: relative;
+}
+
+/* Título “fake” no banner, para lembrar o layout da imagem */
+header::before{
+  content: "DESCOBRIR CEP";
+  position: absolute;
+  left: 24px;
+  top: 14px;
+  font-size: 44px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: .5px;
+  text-shadow: 0 2px 0 rgba(0,0,0,.25), 0 0 6px rgba(255,255,255,.35);
+}
+header::after{
+  content: "Foi usado ViaCep nisso";
+  position: absolute;
+  left: 26px;
+  bottom: 12px;
+  font-size: 14px;
+  color: #dfe9f6;
+  letter-spacing: .6px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.4);
+}
+
+/* ===== Área principal centralizada ===== */
+main {
+  display: flex;
+  justify-content: center;
+  padding: 22px 10px 40px;
+}
+
+.container{
+  position: relative;
+  width: 880px;           /* largura próxima do screenshot */
+  min-height: 480px;
+  background: #ffffff;
+  border: 1px solid #7fa5cf;
+  box-shadow:
+    0 0 0 1px #c9d9ee inset,
+    0 0 0 2px #ffffff inset,
+    0 3px 18px rgba(0,0,0,.25);
+  padding: 22px 22px 26px 260px; /* espaço para a barra lateral fake */
+}
+
+/* ===== Barra lateral “fake” azul clara ===== */
+.container::before{
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 240px;
+  background:
+    linear-gradient(#e9f1fb, #dce9f8);
+  border-right: 1px solid #9fbfe4;
+  box-shadow: 1px 0 0 #fff inset;
+}
+
+/* Faixa vertical azul com texto rotacionado */
+.container::after{
+  content: "Venha    Consultar";
+  position: absolute;
+  left: 10px; top: 60%;
+  transform: rotate(-90deg) translateY(50%);
+  transform-origin: left top;
+  font-weight: 700;
+  letter-spacing: 6px;
+  font-size: 18px;
+  color: #1a3f7a;
+  opacity: .75;
+}
+
+/* ===== Bloco de “widget” na área de conteúdo ===== */
+h2{
+  margin: 0 0 14px;
+  font-size: 22px;
+  color: #173a6f;
+  text-shadow: 0 1px 0 #fff;
+  border-bottom: 1px solid #c7d8ee;
+  padding-bottom: 8px;
+}
+
+#numeroCasa{
+  
+  padding: 8px 10px;
+  border: 1px solid #6e93bf;
+  background: #f7fbff;
+  box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #d4e4f7;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+
+#cep{
+  width: 280px;
+  padding: 8px 10px;
+  border: 1px solid #6e93bf;
+  background: #f7fbff;
+  box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #d4e4f7;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+button{
+  margin-left: 8px;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 2px;
+  border: 1px solid #274b85;
+  background:
+    linear-gradient(#e8f0ff, #c9dbf6 48%, #b4ccf0 52%, #9db9e6);
+  box-shadow:
+    0 1px 0 #fff inset,
+    0 -1px 0 #86a8d7 inset,
+    0 2px 0 rgba(0,0,0,.08);
+  color: #0f2d60;
+  cursor: pointer;
+}
+button:hover{
+  filter: brightness(1.04);
+}
+button:active{
+  box-shadow:
+    0 -1px 0 #fff inset,
+    0 1px 0 #86a8d7 inset;
+  transform: translateY(1px);
+}
+
+/* Cartão de resultado com bordas “Windows 2000 vibe” */
+#resultado{
+  margin-top: 14px;
+  padding: 12px;
+  min-height: 56px;
+  border: 1px solid #7fa5cf;
+  background: #f4f8ff;
+  box-shadow: inset 0 0 0 1px #ffffff;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #163b71;
+}
+img{
+  width: 300px;
+  height: auto; /* Mantei a imagem fofa do jeito certo */
+  display:block; 
+  margin: 0 auto;
+}
+#resultado .card { /* Tenho que descobrir como fazer um card sem parecer um balão */
+  background: #ffffff;
+  border: 1px solid #7fa5cf;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  margin-top: 12px;
+}
+#resultado .card h4 {
+  margin: 0 0 6px;
+  color: #163b71;
+}
+
+#resultado .card p {
+  margin: 4px 0;
+  color: #0f2d60;
+  font-size: 14px;
+}
+
+
+/* ===== Pequenos detalhes “retro” ===== */
+section{
+  position: relative;
+}
+
+/* barra de status decorativa no rodapé da caixa */
+.container .status-bar{
+  position: absolute;
+  left: 0; right: 0; bottom: -22px;
+  height: 20px;
+  background: linear-gradient(#dfeaf9, #cbdcf5);
+  border: 1px solid #8fb0dc;
+  box-shadow: 0 1px 0 #ffffff inset;
+}
+
+/* Responsivo simples mantendo o clima retrô */
+@media (max-width: 940px){
+  .container{ width: 96vw; }
+}
+@media (max-width: 640px){
+  .container{
+    padding: 18px 14px 20px 14px; /* some a coluna lateral no mobile */
+  }
+  .container::before,
+  .container::after{ display: none; }
+  header::before{ font-size: 34px; top: 18px; }
+  header::aft{ font-size: 12px; }
+
+}
